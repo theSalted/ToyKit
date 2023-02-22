@@ -11,15 +11,50 @@
 		663348E1299F4E350051C24B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663348E0299F4E350051C24B /* ContentView.swift */; };
 		663348E3299F4E360051C24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663348E2299F4E360051C24B /* Assets.xcassets */; };
 		663348E7299F4E360051C24B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663348E6299F4E360051C24B /* Preview Assets.xcassets */; };
+		66341612299F4FC300738FB9 /* OctopusKit in Frameworks */ = {isa = PBXBuildFile; productRef = 66341611299F4FC300738FB9 /* OctopusKit */; };
+		66F506BE299F54BB00965422 /* 6B - PlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506A8299F54BB00965422 /* 6B - PlayScene.swift */; };
+		66F506BF299F54BB00965422 /* 6A - PlayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506A9299F54BB00965422 /* 6A - PlayState.swift */; };
+		66F506C0299F54BB00965422 /* 6C - PlayUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506AA299F54BB00965422 /* 6C - PlayUI.swift */; };
+		66F506C1299F54BB00965422 /* 7 - PausedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506AC299F54BB00965422 /* 7 - PausedState.swift */; };
+		66F506C2299F54BB00965422 /* 5C - TitleUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506AE299F54BB00965422 /* 5C - TitleUI.swift */; };
+		66F506C3299F54BB00965422 /* 5B - TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506AF299F54BB00965422 /* 5B - TitleScene.swift */; };
+		66F506C4299F54BB00965422 /* 5A - TitleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506B0299F54BB00965422 /* 5A - TitleState.swift */; };
+		66F506C5299F54BB00965422 /* 4 - LogoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506B2299F54BB00965422 /* 4 - LogoState.swift */; };
+		66F506C6299F54BB00965422 /* 8 - GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506B4299F54BB00965422 /* 8 - GameOverState.swift */; };
+		66F506C7299F54BB00965422 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506B6299F54BB00965422 /* ButtonStyles.swift */; };
+		66F506C8299F54BB00965422 /* GlobalDataComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506B8299F54BB00965422 /* GlobalDataComponent.swift */; };
+		66F506C9299F54BB00965422 /* NodeSpawnerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506B9299F54BB00965422 /* NodeSpawnerComponent.swift */; };
+		66F506CA299F54BB00965422 /* TitleEffectsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506BA299F54BB00965422 /* TitleEffectsComponent.swift */; };
+		66F506CB299F54BB00965422 /* 1 - OctopusKitQuickStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506BB299F54BB00965422 /* 1 - OctopusKitQuickStartView.swift */; };
+		66F506CC299F54BB00965422 /* 3 - MyGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506BC299F54BB00965422 /* 3 - MyGameViewController.swift */; };
+		66F506CD299F54BB00965422 /* 2 - MyGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506BD299F54BB00965422 /* 2 - MyGameCoordinator.swift */; };
+		66F5071F29A1E05E00965422 /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 66F5071E29A1E05E00965422 /* TestScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		663348DB299F4E350051C24B /* ArcadeKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcadeKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		663348DE299F4E350051C24B /* ArcadeKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeKitApp.swift; sourceTree = "<group>"; };
-		663348E0299F4E350051C24B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		663348E0299F4E350051C24B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 5; usesTabs = 0; };
 		663348E2299F4E360051C24B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		663348E4299F4E360051C24B /* ArcadeKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArcadeKit.entitlements; sourceTree = "<group>"; };
 		663348E6299F4E360051C24B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		66F506A8299F54BB00965422 /* 6B - PlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "6B - PlayScene.swift"; sourceTree = "<group>"; };
+		66F506A9299F54BB00965422 /* 6A - PlayState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "6A - PlayState.swift"; sourceTree = "<group>"; };
+		66F506AA299F54BB00965422 /* 6C - PlayUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "6C - PlayUI.swift"; sourceTree = "<group>"; };
+		66F506AC299F54BB00965422 /* 7 - PausedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "7 - PausedState.swift"; sourceTree = "<group>"; };
+		66F506AE299F54BB00965422 /* 5C - TitleUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "5C - TitleUI.swift"; sourceTree = "<group>"; };
+		66F506AF299F54BB00965422 /* 5B - TitleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "5B - TitleScene.swift"; sourceTree = "<group>"; };
+		66F506B0299F54BB00965422 /* 5A - TitleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "5A - TitleState.swift"; sourceTree = "<group>"; };
+		66F506B2299F54BB00965422 /* 4 - LogoState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "4 - LogoState.swift"; sourceTree = "<group>"; };
+		66F506B4299F54BB00965422 /* 8 - GameOverState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "8 - GameOverState.swift"; sourceTree = "<group>"; };
+		66F506B6299F54BB00965422 /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		66F506B8299F54BB00965422 /* GlobalDataComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDataComponent.swift; sourceTree = "<group>"; };
+		66F506B9299F54BB00965422 /* NodeSpawnerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeSpawnerComponent.swift; sourceTree = "<group>"; };
+		66F506BA299F54BB00965422 /* TitleEffectsComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleEffectsComponent.swift; sourceTree = "<group>"; };
+		66F506BB299F54BB00965422 /* 1 - OctopusKitQuickStartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "1 - OctopusKitQuickStartView.swift"; sourceTree = "<group>"; };
+		66F506BC299F54BB00965422 /* 3 - MyGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "3 - MyGameViewController.swift"; sourceTree = "<group>"; };
+		66F506BD299F54BB00965422 /* 2 - MyGameCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "2 - MyGameCoordinator.swift"; sourceTree = "<group>"; };
+		66F5071E29A1E05E00965422 /* TestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66341612299F4FC300738FB9 /* OctopusKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +92,9 @@
 				663348E0299F4E350051C24B /* ContentView.swift */,
 				663348E2299F4E360051C24B /* Assets.xcassets */,
 				663348E4299F4E360051C24B /* ArcadeKit.entitlements */,
+				66F506A5299F54BB00965422 /* OK QuickStart */,
 				663348E5299F4E360051C24B /* Preview Content */,
+				66F5071E29A1E05E00965422 /* TestScene.sks */,
 			);
 			path = ArcadeKit;
 			sourceTree = "<group>";
@@ -67,6 +105,93 @@
 				663348E6299F4E360051C24B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		66F506A5299F54BB00965422 /* OK QuickStart */ = {
+			isa = PBXGroup;
+			children = (
+				66F506A6299F54BB00965422 /* Game States */,
+				66F506B5299F54BB00965422 /* Shared UI */,
+				66F506B7299F54BB00965422 /* Components */,
+				66F506BB299F54BB00965422 /* 1 - OctopusKitQuickStartView.swift */,
+				66F506BC299F54BB00965422 /* 3 - MyGameViewController.swift */,
+				66F506BD299F54BB00965422 /* 2 - MyGameCoordinator.swift */,
+			);
+			path = "OK QuickStart";
+			sourceTree = "<group>";
+		};
+		66F506A6299F54BB00965422 /* Game States */ = {
+			isa = PBXGroup;
+			children = (
+				66F506A7299F54BB00965422 /* 6 - PlayState */,
+				66F506AB299F54BB00965422 /* 7 - PausedState */,
+				66F506AD299F54BB00965422 /* 5 - TitleState */,
+				66F506B1299F54BB00965422 /* 4 - LogoState */,
+				66F506B3299F54BB00965422 /* 8 - GameOverState */,
+			);
+			path = "Game States";
+			sourceTree = "<group>";
+		};
+		66F506A7299F54BB00965422 /* 6 - PlayState */ = {
+			isa = PBXGroup;
+			children = (
+				66F506A8299F54BB00965422 /* 6B - PlayScene.swift */,
+				66F506A9299F54BB00965422 /* 6A - PlayState.swift */,
+				66F506AA299F54BB00965422 /* 6C - PlayUI.swift */,
+			);
+			path = "6 - PlayState";
+			sourceTree = "<group>";
+		};
+		66F506AB299F54BB00965422 /* 7 - PausedState */ = {
+			isa = PBXGroup;
+			children = (
+				66F506AC299F54BB00965422 /* 7 - PausedState.swift */,
+			);
+			path = "7 - PausedState";
+			sourceTree = "<group>";
+		};
+		66F506AD299F54BB00965422 /* 5 - TitleState */ = {
+			isa = PBXGroup;
+			children = (
+				66F506AE299F54BB00965422 /* 5C - TitleUI.swift */,
+				66F506AF299F54BB00965422 /* 5B - TitleScene.swift */,
+				66F506B0299F54BB00965422 /* 5A - TitleState.swift */,
+			);
+			path = "5 - TitleState";
+			sourceTree = "<group>";
+		};
+		66F506B1299F54BB00965422 /* 4 - LogoState */ = {
+			isa = PBXGroup;
+			children = (
+				66F506B2299F54BB00965422 /* 4 - LogoState.swift */,
+			);
+			path = "4 - LogoState";
+			sourceTree = "<group>";
+		};
+		66F506B3299F54BB00965422 /* 8 - GameOverState */ = {
+			isa = PBXGroup;
+			children = (
+				66F506B4299F54BB00965422 /* 8 - GameOverState.swift */,
+			);
+			path = "8 - GameOverState";
+			sourceTree = "<group>";
+		};
+		66F506B5299F54BB00965422 /* Shared UI */ = {
+			isa = PBXGroup;
+			children = (
+				66F506B6299F54BB00965422 /* ButtonStyles.swift */,
+			);
+			path = "Shared UI";
+			sourceTree = "<group>";
+		};
+		66F506B7299F54BB00965422 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				66F506B8299F54BB00965422 /* GlobalDataComponent.swift */,
+				66F506B9299F54BB00965422 /* NodeSpawnerComponent.swift */,
+				66F506BA299F54BB00965422 /* TitleEffectsComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +210,9 @@
 			dependencies = (
 			);
 			name = ArcadeKit;
+			packageProductDependencies = (
+				66341611299F4FC300738FB9 /* OctopusKit */,
+			);
 			productName = ArcadeKit;
 			productReference = 663348DB299F4E350051C24B /* ArcadeKit.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +241,9 @@
 				Base,
 			);
 			mainGroup = 663348D2299F4E350051C24B;
+			packageReferences = (
+				66341610299F4FC300738FB9 /* XCRemoteSwiftPackageReference "octopuskit" */,
+			);
 			productRefGroup = 663348DC299F4E350051C24B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F5071F29A1E05E00965422 /* TestScene.sks in Resources */,
 				663348E7299F4E360051C24B /* Preview Assets.xcassets in Resources */,
 				663348E3299F4E360051C24B /* Assets.xcassets in Resources */,
 			);
@@ -139,8 +271,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F506CA299F54BB00965422 /* TitleEffectsComponent.swift in Sources */,
 				663348E1299F4E350051C24B /* ContentView.swift in Sources */,
+				66F506C7299F54BB00965422 /* ButtonStyles.swift in Sources */,
+				66F506CD299F54BB00965422 /* 2 - MyGameCoordinator.swift in Sources */,
+				66F506C5299F54BB00965422 /* 4 - LogoState.swift in Sources */,
 				663348DF299F4E350051C24B /* ArcadeKitApp.swift in Sources */,
+				66F506C0299F54BB00965422 /* 6C - PlayUI.swift in Sources */,
+				66F506BF299F54BB00965422 /* 6A - PlayState.swift in Sources */,
+				66F506C3299F54BB00965422 /* 5B - TitleScene.swift in Sources */,
+				66F506C6299F54BB00965422 /* 8 - GameOverState.swift in Sources */,
+				66F506C8299F54BB00965422 /* GlobalDataComponent.swift in Sources */,
+				66F506BE299F54BB00965422 /* 6B - PlayScene.swift in Sources */,
+				66F506C4299F54BB00965422 /* 5A - TitleState.swift in Sources */,
+				66F506C1299F54BB00965422 /* 7 - PausedState.swift in Sources */,
+				66F506CC299F54BB00965422 /* 3 - MyGameViewController.swift in Sources */,
+				66F506C9299F54BB00965422 /* NodeSpawnerComponent.swift in Sources */,
+				66F506CB299F54BB00965422 /* 1 - OctopusKitQuickStartView.swift in Sources */,
+				66F506C2299F54BB00965422 /* 5C - TitleUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +502,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		66341610299F4FC300738FB9 /* XCRemoteSwiftPackageReference "octopuskit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/InvadingOctopus/octopuskit";
+			requirement = {
+				kind = exactVersion;
+				version = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		66341611299F4FC300738FB9 /* OctopusKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66341610299F4FC300738FB9 /* XCRemoteSwiftPackageReference "octopuskit" */;
+			productName = OctopusKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 663348D3299F4E350051C24B /* Project object */;
 }
