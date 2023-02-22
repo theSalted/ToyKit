@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		663348DF299F4E350051C24B /* ArcadeKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663348DE299F4E350051C24B /* ArcadeKitApp.swift */; };
-		663348E1299F4E350051C24B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663348E0299F4E350051C24B /* ContentView.swift */; };
+		663348E1299F4E350051C24B /* GameEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663348E0299F4E350051C24B /* GameEditorView.swift */; };
 		663348E3299F4E360051C24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663348E2299F4E360051C24B /* Assets.xcassets */; };
 		663348E7299F4E360051C24B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663348E6299F4E360051C24B /* Preview Assets.xcassets */; };
 		66341612299F4FC300738FB9 /* OctopusKit in Frameworks */ = {isa = PBXBuildFile; productRef = 66341611299F4FC300738FB9 /* OctopusKit */; };
+		6693388929A616B8005AF692 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693388829A616B8005AF692 /* GameScene.swift */; };
+		6693388E29A61801005AF692 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693388D29A61801005AF692 /* Constants.swift */; };
+		6693389029A6185C005AF692 /* SceneSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693388F29A6185C005AF692 /* SceneSettingsModel.swift */; };
+		6693389229A6190E005AF692 /* StepperTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693389129A6190E005AF692 /* StepperTextFieldView.swift */; };
 		66F506BE299F54BB00965422 /* 6B - PlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506A8299F54BB00965422 /* 6B - PlayScene.swift */; };
 		66F506BF299F54BB00965422 /* 6A - PlayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506A9299F54BB00965422 /* 6A - PlayState.swift */; };
 		66F506C0299F54BB00965422 /* 6C - PlayUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506AA299F54BB00965422 /* 6C - PlayUI.swift */; };
@@ -28,16 +32,19 @@
 		66F506CB299F54BB00965422 /* 1 - OctopusKitQuickStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506BB299F54BB00965422 /* 1 - OctopusKitQuickStartView.swift */; };
 		66F506CC299F54BB00965422 /* 3 - MyGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506BC299F54BB00965422 /* 3 - MyGameViewController.swift */; };
 		66F506CD299F54BB00965422 /* 2 - MyGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506BD299F54BB00965422 /* 2 - MyGameCoordinator.swift */; };
-		66F5071F29A1E05E00965422 /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 66F5071E29A1E05E00965422 /* TestScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		663348DB299F4E350051C24B /* ArcadeKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcadeKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		663348DE299F4E350051C24B /* ArcadeKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeKitApp.swift; sourceTree = "<group>"; };
-		663348E0299F4E350051C24B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 5; usesTabs = 0; };
+		663348E0299F4E350051C24B /* GameEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEditorView.swift; sourceTree = "<group>"; tabWidth = 5; usesTabs = 0; };
 		663348E2299F4E360051C24B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		663348E4299F4E360051C24B /* ArcadeKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArcadeKit.entitlements; sourceTree = "<group>"; };
 		663348E6299F4E360051C24B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6693388829A616B8005AF692 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		6693388D29A61801005AF692 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6693388F29A6185C005AF692 /* SceneSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSettingsModel.swift; sourceTree = "<group>"; };
+		6693389129A6190E005AF692 /* StepperTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperTextFieldView.swift; sourceTree = "<group>"; };
 		66F506A8299F54BB00965422 /* 6B - PlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "6B - PlayScene.swift"; sourceTree = "<group>"; };
 		66F506A9299F54BB00965422 /* 6A - PlayState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "6A - PlayState.swift"; sourceTree = "<group>"; };
 		66F506AA299F54BB00965422 /* 6C - PlayUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "6C - PlayUI.swift"; sourceTree = "<group>"; };
@@ -54,7 +61,6 @@
 		66F506BB299F54BB00965422 /* 1 - OctopusKitQuickStartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "1 - OctopusKitQuickStartView.swift"; sourceTree = "<group>"; };
 		66F506BC299F54BB00965422 /* 3 - MyGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "3 - MyGameViewController.swift"; sourceTree = "<group>"; };
 		66F506BD299F54BB00965422 /* 2 - MyGameCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "2 - MyGameCoordinator.swift"; sourceTree = "<group>"; };
-		66F5071E29A1E05E00965422 /* TestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +94,16 @@
 		663348DD299F4E350051C24B /* ArcadeKit */ = {
 			isa = PBXGroup;
 			children = (
+				6693388529A615FE005AF692 /* Extensions */,
+				6693388729A6166F005AF692 /* Scenes */,
+				6693388429A615E2005AF692 /* Model */,
+				6693388329A615D1005AF692 /* Views */,
+				6693388C29A617EA005AF692 /* Utilities */,
+				6693388A29A616DF005AF692 /* Testground */,
 				663348DE299F4E350051C24B /* ArcadeKitApp.swift */,
-				663348E0299F4E350051C24B /* ContentView.swift */,
 				663348E2299F4E360051C24B /* Assets.xcassets */,
 				663348E4299F4E360051C24B /* ArcadeKit.entitlements */,
-				66F506A5299F54BB00965422 /* OK QuickStart */,
 				663348E5299F4E360051C24B /* Preview Content */,
-				66F5071E29A1E05E00965422 /* TestScene.sks */,
 			);
 			path = ArcadeKit;
 			sourceTree = "<group>";
@@ -105,6 +114,70 @@
 				663348E6299F4E360051C24B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6693388329A615D1005AF692 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				663348E0299F4E350051C24B /* GameEditorView.swift */,
+				6693388629A61619005AF692 /* Custom Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6693388429A615E2005AF692 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6693388F29A6185C005AF692 /* SceneSettingsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6693388529A615FE005AF692 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6693388629A61619005AF692 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				6693389129A6190E005AF692 /* StepperTextFieldView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		6693388729A6166F005AF692 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6693388829A616B8005AF692 /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6693388A29A616DF005AF692 /* Testground */ = {
+			isa = PBXGroup;
+			children = (
+				6693388B29A616F6005AF692 /* Yuhao */,
+			);
+			path = Testground;
+			sourceTree = "<group>";
+		};
+		6693388B29A616F6005AF692 /* Yuhao */ = {
+			isa = PBXGroup;
+			children = (
+				66F506A5299F54BB00965422 /* OK QuickStart */,
+			);
+			path = Yuhao;
+			sourceTree = "<group>";
+		};
+		6693388C29A617EA005AF692 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6693388D29A61801005AF692 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		66F506A5299F54BB00965422 /* OK QuickStart */ = {
@@ -258,7 +331,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66F5071F29A1E05E00965422 /* TestScene.sks in Resources */,
 				663348E7299F4E360051C24B /* Preview Assets.xcassets in Resources */,
 				663348E3299F4E360051C24B /* Assets.xcassets in Resources */,
 			);
@@ -271,8 +343,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6693389229A6190E005AF692 /* StepperTextFieldView.swift in Sources */,
 				66F506CA299F54BB00965422 /* TitleEffectsComponent.swift in Sources */,
-				663348E1299F4E350051C24B /* ContentView.swift in Sources */,
+				6693388929A616B8005AF692 /* GameScene.swift in Sources */,
+				663348E1299F4E350051C24B /* GameEditorView.swift in Sources */,
 				66F506C7299F54BB00965422 /* ButtonStyles.swift in Sources */,
 				66F506CD299F54BB00965422 /* 2 - MyGameCoordinator.swift in Sources */,
 				66F506C5299F54BB00965422 /* 4 - LogoState.swift in Sources */,
@@ -283,8 +357,10 @@
 				66F506C6299F54BB00965422 /* 8 - GameOverState.swift in Sources */,
 				66F506C8299F54BB00965422 /* GlobalDataComponent.swift in Sources */,
 				66F506BE299F54BB00965422 /* 6B - PlayScene.swift in Sources */,
+				6693389029A6185C005AF692 /* SceneSettingsModel.swift in Sources */,
 				66F506C4299F54BB00965422 /* 5A - TitleState.swift in Sources */,
 				66F506C1299F54BB00965422 /* 7 - PausedState.swift in Sources */,
+				6693388E29A61801005AF692 /* Constants.swift in Sources */,
 				66F506CC299F54BB00965422 /* 3 - MyGameViewController.swift in Sources */,
 				66F506C9299F54BB00965422 /* NodeSpawnerComponent.swift in Sources */,
 				66F506CB299F54BB00965422 /* 1 - OctopusKitQuickStartView.swift in Sources */,

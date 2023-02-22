@@ -11,7 +11,7 @@ import SwiftUI
 struct ArcadeKitApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GameEditorView()
         }
     }
 }
