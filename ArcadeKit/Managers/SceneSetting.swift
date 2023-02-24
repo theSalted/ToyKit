@@ -7,11 +7,13 @@
 
 import SwiftUI
 import SpriteKit
+import GameplayKit
 
 /// An object that serve as a bridge between GameScene and GUI, shared between GameEditoView and its child views
 @MainActor final class SceneSetting : ObservableObject {
     
     @Published var scene = GameScene()
+    @Published var viewEntity = GKEntity()
     
     @Published var sceneSizeX : Double = 1000
     @Published var sceneSizeY : Double = 1000
@@ -27,6 +29,8 @@ import SpriteKit
     
     @Published var selectedScaleMode : SKSceneScaleMode = .resizeFill
     @Published var scaleModes : [SKSceneScaleMode] = [.resizeFill, .aspectFit, .aspectFill, .fill]
+    
+    @Published var components = [GKComponent]()
     
     @Published var selectedPhysicsBodyType : PhysicsBodyType = .staticPhysicsBody
     let physicsBodyType : [PhysicsBodyType] = [.dynamicPhysicsBody, .staticPhysicsBody, .none]
@@ -48,6 +52,7 @@ import SpriteKit
         updateSKColorScheme()
         updateAnchorPoint()
         updatePhysicsBodySetting()
+        addComponent(component: EmojiNodeSpawnerComponet())
     }
     
     // TODO: Deprecate the update functions and prevent views from assigning variables
@@ -62,6 +67,11 @@ import SpriteKit
         #endif
     }
     
+    /// Add component to `SceneSetting` and `GameScene`'s componets list
+    func addComponent(component: GKComponent) {
+        components.append(component)
+        scene.sceneEntity.addComponent(component)
+    }
     
     // TODO: find a better solution for pause state update
     /// Update game scene's pause state with a property

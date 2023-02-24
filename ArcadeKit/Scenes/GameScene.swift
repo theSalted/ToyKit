@@ -7,10 +7,20 @@
 
 import SpriteKit
 import SwiftUI
+import GameplayKit
+
+
 
 /// An object that organize all of the active game contents.
 final class GameScene : SKScene {
+    /// Child `GKEntity` relevant to gameplay
+    /// - Use `addEntity()` and `removeEntity()` to add and remove individual entity
+    var entities = Set<GKEntity>()
     
+    /// An entity relevant to gameplay associate with game scene object
+    var sceneEntity = GKEntity()
+    
+    // TODO: Deprecate these to comply to ECS
     var dynamicPhysicsBody = SKShapeNode()
     var physicsBodyType : PhysicsBodyType = .dynamicPhysicsBody
     
@@ -20,6 +30,14 @@ final class GameScene : SKScene {
         //initDynamicPhysicsBody()
     }
     
+    override func sceneDidLoad() {
+        // declard and add entity to scene
+        
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        
+    }
     override func didChangeSize(_ oldSize: CGSize) {
         
         // TODO: Achieve physicsBodyType swap in an ECS System
@@ -45,11 +63,35 @@ final class GameScene : SKScene {
     }
     #endif
     
+    /// Add an entity and its node to end of the reciver's enities list
+    func addEntity(_ entity: GKEntity) {
+        entities.insert(entity)
+        
+        if let spriteNode = entity.component(ofType: SpriteComponent.self)?.node {
+            scene?.addChild(spriteNode)
+        }
+    }
+    
+    /// Add an entity and its node from its parent
+    func removeEntity(_ entity: GKEntity) {
+        if let spriteNode = entity.component(ofType: SpriteComponent.self)?.node {
+            spriteNode.removeFromParent()
+        }
+        
+        entities.remove(entity)
+    }
+    
+    func addSceneEntity( ){
+        
+    }
+    
     // TODO: Adopt touch input to an ECS system
     /// Tells this object that primary input has occured depending on platform. Left click on macOS, first touch on iOS and iPadOS
     func primaryInputDown(location: CGPoint)
     {
-        addChild(createRandomEmojiNode(position: location))
+        if let emojiNode = self.sceneEntity[EmojiNodeSpawnerComponet.self]?.createRandomEmojiNode(position: location) {
+            addChild(emojiNode)
+        }
     }
     
     /// Create a SKShapeNode with physics boundaries as dynamic physics body
@@ -116,33 +158,21 @@ final class GameScene : SKScene {
         }
         
     }
-    
-    // TODO: adopt to an ECS architecture
-    /// Create an randon emoji  as SKLabelNode and offset it
-    func createRandomEmojiNode(position: CGPoint) -> SKLabelNode {
-        let emojis = "👾🕹🚀🎮📱⌚️💿📀🧲🧿🎲🍏🥎🍄🧠👁💩😈👿👻💀👽🤖🎃👊🏻💧☁️🚗💣🧸🧩🎨🎸⚽️🎱🍖🍑🍆🍩🍌⭐️🌈🌸🌺🌼🐹🦊🐼🐱🐶❤️🧡💛💚💙💜💔🔶🔷♦️"
-        let randomEmoji = String(emojis.randomElement()!)
-        let emojiNode = SKLabelNode(text: randomEmoji)
-        emojiNode.fontSize = 64
-        emojiNode.position = position
-        emojiNode.zPosition = -10
-        
-        emojiNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(widthAndHeight: 50), center: CGPoint(x: 0, y: 20))
-        
-        let randomAdjustment = CGVector(dx: CGFloat(Int.random(in: -40...40)),
-                                        dy: CGFloat(Int.random(in: -10...25)))
-        
-        let randomForce = CGVector(dx: randomAdjustment.dx/3,
-                                   dy: CGFloat(Int.random(in: 15...25)))
-        emojiNode.run(
-            .sequence([
-                .applyImpulse(randomForce, duration: 0.1),
-                .wait(forDuration: 10.0),
-                .fadeOut(withDuration: 0.5),
-                .removeFromParent()
-            ])
-        )
-        return emojiNode
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
