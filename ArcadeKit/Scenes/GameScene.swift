@@ -9,13 +9,13 @@ import SpriteKit
 import SwiftUI
 import GameplayKit
 
-
-
 /// An object that organize all of the active game contents.
 final class GameScene : SKScene {
     /// Child `GKEntity` relevant to gameplay
     /// - Use `addEntity()` and `removeEntity()` to add and remove individual entity
     var entities = Set<GKEntity>()
+    
+    var testGKEntity = TestGKScene(scene: SKScene())
     
     /// An entity relevant to gameplay associate with game scene object
     var sceneEntity = GKEntity()
@@ -36,7 +36,6 @@ final class GameScene : SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        
     }
     override func didChangeSize(_ oldSize: CGSize) {
         
@@ -79,10 +78,6 @@ final class GameScene : SKScene {
         }
         
         entities.remove(entity)
-    }
-    
-    func addSceneEntity( ){
-        
     }
     
     // TODO: Adopt touch input to an ECS system
@@ -161,6 +156,30 @@ final class GameScene : SKScene {
 }
 
 
+
+
+class TestGKScene : GKScene {
+    
+    init(scene : SKScene) {
+        super.init()
+        rootNode = scene
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+}
+
+class TestComponentWithView : GKComponent {
+    
+    @Published var testVar = "test"
+    
+    var TestInspectView: some View {
+        Text("")
+    }
+}
 
 
 

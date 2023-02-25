@@ -13,7 +13,6 @@ import GameplayKit
 @MainActor final class SceneSetting : ObservableObject {
     
     @Published var scene = GameScene()
-    @Published var viewEntity = GKEntity()
     
     @Published var sceneSizeX : Double = 1000
     @Published var sceneSizeY : Double = 1000
@@ -120,46 +119,153 @@ import GameplayKit
     /// Update game physics body selection.
     func updatePhysicsBodySetting() {
         scene.physicsBodyType = selectedPhysicsBodyType
-        if selectedPhysicsBodyType == .dynamicPhysicsBody {
+        
+        switch scene.physicsBodyType {
+        case .dynamicPhysicsBody:
+            destroyAllPhysicsBody()
             initDynamicPhysicsBody()
-        } else {
+        case .staticPhysicsBody:
+            destroyAllPhysicsBody()
+            initStaticPhysicsBody()
+        case .none:
+            scene.physicsBody = nil
             scene.dynamicPhysicsBody.removeFromParent()
         }
-        
-        if selectedPhysicsBodyType == .staticPhysicsBody {
-            initPhysicsBody()
-        } else {
-            scene.physicsBody = nil
-        }
-        
+    }
+    
+    /// Update game physics body and settings with type.
+    func updatePhysicsBody(type: PhysicsBodyType) {
+        selectedPhysicsBodyType = type
+        updatePhysicsBodySetting()
     }
     
     /// Add a physics body to scene.
-    func initPhysicsBody()
+    /// - Warning: Avoid direct call, call `updatePhysicsBody` instead
+    func initStaticPhysicsBody()
     {
         scene.physicsBody = SKPhysicsBody(edgeLoopFrom: scene.frame)
     }
     
     /// Add a dynamic physics body node to game scene.
+    /// - Warning: Avoid direct call, call `updatePhysicsBody` instead
     func initDynamicPhysicsBody() {
-        if selectedPhysicsBodyType == .dynamicPhysicsBody {
-            scene.dynamicPhysicsBody.removeFromParent()
-            scene.dynamicPhysicsBody = scene.createDynamicPhysicsBody(nodeFrame: scene.frame)
-            scene.addChild(scene.dynamicPhysicsBody)
-            updateDynamicPhysicsBodyRender()
-        }
+        scene.dynamicPhysicsBody = scene.createDynamicPhysicsBody(nodeFrame: scene.frame)
+        scene.addChild(scene.dynamicPhysicsBody)
+        updateDynamicPhysicsBodyRender()
     }
     
+    /// Destroy static physics body from game scene.
+    /// - Warning: Avoid direct call, to remove physicsbody call `updatePhysicsBody(type: .none)` instead
+    func destroyStaticPhysicsBody()
+    {
+        scene.physicsBody = nil
+    }
+    
+    /// Destroy dynamic physics body from game scene.
+    /// - Warning: Avoid direct call, to remove physicsbody call `updatePhysicsBody(type: .none)` instead
+    func destroyDynamicPhysicsBody()
+    {
+        scene.dynamicPhysicsBody.removeFromParent()
+    }
+    
+    /// Destroy all physics bodies from game scene.
+    /// - Warning: Avoid direct call, to remove physicsbody call `updatePhysicsBody(type: .none)` instead
+    func destroyAllPhysicsBody()
+    {
+        destroyStaticPhysicsBody()
+        destroyDynamicPhysicsBody()
+    }
+     
     /// update scene's anchor point
     @discardableResult func updateAnchorPoint() -> Bool {
         let numberRange = 0.0...1.0
         if(numberRange.contains(anchorPointX) && numberRange.contains(anchorPointY)) {
             scene.anchorPoint = CGPoint(x: anchorPointX, y: anchorPointY)
-            initDynamicPhysicsBody()
+            updatePhysicsBodySetting()
             return true
         }
         anchorPointX = scene.anchorPoint.x
         anchorPointY = scene.anchorPoint.y
         return false
+    }
+}
+
+class PhysicsBody :  GKComponent {
+    var scene : GameScene {
+        return GameScene()
+    }
+    
+    var selectedPhysicsBodyType : PhysicsBodyType = .staticPhysicsBody
+    var isDynamicPhysicsBodyRendered = false
+    
+    /// Update wether to render dynamic physics body.
+    @discardableResult func updateDynamicPhysicsBodyRender() -> Bool {
+        if isDynamicPhysicsBodyRendered {
+            scene.dynamicPhysicsBody.lineWidth = 3
+            return true
+        } else {
+            scene.dynamicPhysicsBody.lineWidth = 0
+            return false
+        }
+    }
+    
+    /// Update game physics body selection.
+    func updatePhysicsBodySetting() {
+        scene.physicsBodyType = selectedPhysicsBodyType
+        
+        switch scene.physicsBodyType {
+        case .dynamicPhysicsBody:
+            destroyAllPhysicsBody()
+            initDynamicPhysicsBody()
+        case .staticPhysicsBody:
+            destroyAllPhysicsBody()
+            initStaticPhysicsBody()
+        case .none:
+            scene.physicsBody = nil
+            scene.dynamicPhysicsBody.removeFromParent()
+        }
+    }
+    
+    /// Update game physics body and settings with type.
+    func updatePhysicsBody(type: PhysicsBodyType) {
+        selectedPhysicsBodyType = type
+        updatePhysicsBodySetting()
+    }
+    
+    /// Add a physics body to scene.
+    /// - Warning: Avoid direct call, call `updatePhysicsBody` instead
+    func initStaticPhysicsBody()
+    {
+        scene.physicsBody = SKPhysicsBody(edgeLoopFrom: scene.frame)
+    }
+    
+    /// Add a dynamic physics body node to game scene.
+    /// - Warning: Avoid direct call, call `updatePhysicsBody` instead
+    func initDynamicPhysicsBody() {
+        scene.dynamicPhysicsBody = scene.createDynamicPhysicsBody(nodeFrame: scene.frame)
+        scene.addChild(scene.dynamicPhysicsBody)
+        updateDynamicPhysicsBodyRender()
+    }
+    
+    /// Destroy static physics body from game scene.
+    /// - Warning: Avoid direct call, to remove physicsbody call `updatePhysicsBody(type: .none)` instead
+    func destroyStaticPhysicsBody()
+    {
+        scene.physicsBody = nil
+    }
+    
+    /// Destroy dynamic physics body from game scene.
+    /// - Warning: Avoid direct call, to remove physicsbody call `updatePhysicsBody(type: .none)` instead
+    func destroyDynamicPhysicsBody()
+    {
+        scene.dynamicPhysicsBody.removeFromParent()
+    }
+    
+    /// Destroy all physics bodies from game scene.
+    /// - Warning: Avoid direct call, to remove physicsbody call `updatePhysicsBody(type: .none)` instead
+    func destroyAllPhysicsBody()
+    {
+        destroyStaticPhysicsBody()
+        destroyDynamicPhysicsBody()
     }
 }

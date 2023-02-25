@@ -144,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				663348E0299F4E350051C24B /* GameEditorView.swift */,
-				6693388629A61619005AF692 /* Custom Views */,
 				6693389829A63956005AF692 /* SidebarView.swift */,
+				6693388629A61619005AF692 /* Custom Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,8 +218,8 @@
 		6693389529A61FB2005AF692 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				663EFC1829A77FF700BE5004 /* PrimaryPointerEventComponent.swift */,
 				663EFC1429A77F9F00BE5004 /* EmojiNodeSpawnerComponet.swift */,
+				663EFC1829A77FF700BE5004 /* PrimaryPointerEventComponent.swift */,
 				663EFC1A29A7804000BE5004 /* SpriteComponent.swift */,
 			);
 			path = Components;

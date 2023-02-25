@@ -95,7 +95,7 @@ struct SidebarView: View {
                         .font(.headline)
                         .foregroundColor(.gray)
                     List {
-                        ForEach(settings.components, id: \.self) { component in
+                        ForEach(settings.scene.sceneEntity.components, id: \.self) { component in
                             Text(String(describing: type(of: component)))
                         }
                     }
