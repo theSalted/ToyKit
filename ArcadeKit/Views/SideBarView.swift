@@ -53,7 +53,6 @@ struct SidebarView: View {
                         settings.updateSceneSizeSetting()}
                 }
                 
-                
                 Group {
                     Divider()
                     SideBarHeaderView(text: "Anchor Point")
@@ -69,25 +68,7 @@ struct SidebarView: View {
                     }
                 }
                 
-                Group {
-                    Divider()
-                    SideBarHeaderView(text: "Physics Body")
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                    Picker("Type", selection: $settings.selectedPhysicsBodyType) {
-                        ForEach(settings.physicsBodyType, id: \.self) { type in
-                            Text(type.rawValue)
-                        }
-                    }
-                    .onChange(of: settings.selectedPhysicsBodyType) { type in
-                        settings.updatePhysicsBodySetting()
-                    }
-                    Toggle("Show Dynamic Physics Body", isOn: $settings.isDynamicPhysicsBodyRendered)
-                        .onChange(of: settings.isDynamicPhysicsBodyRendered) { newValue in
-                            settings.updateDynamicPhysicsBodyRender()
-                        }
-                        .disabled(settings.selectedPhysicsBodyType != .dynamicPhysicsBody)
-                }
+                settings.scene.sceneEntity[PhysicsBodySceneComponentModel.self]?.inspectorView()
                 
                 Group {
                     Divider()

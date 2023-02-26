@@ -8,6 +8,7 @@
 import GameplayKit
 import SpriteKit
 
+/// Spwan Emoji nodes on scene
 class EmojiNodeSpawnerComponet : GKComponent {
     
     /// A list of co-component types that this component depends on.
