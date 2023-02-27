@@ -27,34 +27,18 @@ import GameplayKit
     @Published var selectedScaleMode : SKSceneScaleMode = .resizeFill
     @Published var scaleModes : [SKSceneScaleMode] = [.resizeFill, .aspectFit, .aspectFill, .fill]
     
-    //@Published var components = [GKComponent]()
-    
     @Published var selectedPhysicsBodyType : PhysicsBodyType = .staticPhysicsBody
     let physicsBodyType : [PhysicsBodyType] = [.dynamicPhysicsBody, .staticPhysicsBody, .none]
     
     @Published var isPaused = false
     
-    var testPause : Bool {
-        scene.isPaused
-    }
-    
     ///  Init game scene; expected to be called when SpriteView onAppear.
     func initGameScene() {
         updateSceneSizeSetting()
-        updateSKColorScheme()
         updateAnchorPoint()
-        addComponent(component: EmojiNodeSpawnerComponet())
+        addComponent(component: BackgroundColorSchemeSceneComponent(scene: scene))
         addComponent(component: PhysicsBodySceneComponentModel(scene: scene))
-    }
-    
-    /// Update spritekit's color scheme based on light/dark mode
-    func updateSKColorScheme() {
-        // TODO: Expand color scheme to support custom background color
-        #if canImport(AppKit)
-        scene.backgroundColor = NSColor.windowBackgroundColor
-        #elseif canImport(UIKit)
-        scene.backgroundColor = UIColor.systemBackground
-        #endif
+        addComponent(component: EmojiNodeSpawnerComponet())
     }
     
     /// Add component to `SceneSetting` and `GameScene`'s componets list
@@ -74,7 +58,6 @@ import GameplayKit
     func updatePause() {
         scene.isPaused = isPaused
     }
-    
     
     /// Update game scene's size and scale mode
     func updateSceneSizeSetting() {

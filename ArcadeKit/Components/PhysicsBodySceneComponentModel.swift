@@ -17,8 +17,6 @@ import SwiftUI
     private var scene : SKScene
     private var dynamicPhysicsBody = SKShapeNode()
     
-    let physicsBodyTypes : [PhysicsBodyType] = [.dynamicPhysicsBody, .staticPhysicsBody, .none]
-    
     init(scene: SKScene) {
         self.scene = scene
         super.init()

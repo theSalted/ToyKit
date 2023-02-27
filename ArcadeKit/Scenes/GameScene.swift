@@ -18,6 +18,12 @@ final class GameScene : SKScene {
     /// An entity relevant to gameplay associate with game scene object
     var sceneEntity = GKEntity()
     
+    lazy var componentSystems : [GKComponentSystem] = {
+        let emojiNodeSpawnerSystem = GKComponentSystem(componentClass: EmojiNodeSpawnerComponet.self)
+        let physicsBodySystem = GKComponentSystem(componentClass: PhysicsBodySceneComponentModel.self)
+        return [emojiNodeSpawnerSystem, physicsBodySystem]
+    }()
+    
     override func update(_ currentTime: TimeInterval) {
     }
     

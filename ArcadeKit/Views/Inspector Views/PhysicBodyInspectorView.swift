@@ -16,7 +16,7 @@ struct PhysicBodyInspectorView: View {
             .font(.headline)
             .foregroundColor(.gray)
         Picker("Type", selection: $component.physicsBodyType) {
-            ForEach(component.physicsBodyTypes, id: \.self) { type in
+            ForEach(PhysicsBodyType.allCases, id: \.self) { type in
                 Text(type.rawValue)
             }
         }

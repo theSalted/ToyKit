@@ -39,7 +39,8 @@ struct GameEditorView: View {
                             settings.updateSceneSizeSetting()
                         })
                         .onChange(of: colorScheme) { _ in
-                            settings.updateSKColorScheme()}
+                            settings.scene.sceneEntity[BackgroundColorSchemeSceneComponent.self]?.updateSKColorScheme()
+                        }
                     #if os(macOS)
                         .onChange(of: controlActiveState) { newValue in
                             switch newValue {

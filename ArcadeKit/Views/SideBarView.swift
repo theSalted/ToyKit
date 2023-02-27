@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GameplayKit
 
 struct SidebarView: View {
     @EnvironmentObject var settings : SceneSetting
@@ -77,17 +78,33 @@ struct SidebarView: View {
                         .foregroundColor(.gray)
                     List {
                         ForEach(settings.scene.sceneEntity.components, id: \.self) { component in
-                            Text(String(describing: type(of: component)))
+                            ComponentListItem(entity: $settings.scene.sceneEntity,component: component)
                         }
                     }
-                    
                 }
-                
                 Spacer()
-                
             }
             .padding()
             .frame(width: width)
+        }
+    }
+}
+
+struct ComponentListItem: View {
+    @Binding var entity : GKEntity
+    var component : GKComponent
+    
+    var body: some View {
+        HStack {
+            Text(String(describing: type(of: component)))
+        }
+        .contextMenu{
+            Button {
+                entity.removeComponent(ofType: component.componentType)
+            } label: {
+                Label("Remove Component", image: "xmark")
+            }
+
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PhysicsBodyType : String {
+enum PhysicsBodyType : String, CaseIterable {
     case none = "None"
     case dynamicPhysicsBody = "Dynamic"
     case staticPhysicsBody = "Static"

@@ -21,6 +21,13 @@ class EmojiNodeSpawnerComponet : GKComponent {
         nil
     }
     
+    override func didAddToEntity() {
+        checkPrerequisiteAndEnvironmentCompliance()
+        guard self.entity != nil else {
+            fatalError("Component fatal non-compliacne: entity not set")
+        }
+    }
+    
     /// Check if the compponet is attached to an entity and any of the components is missing in `prerequisiteComponets`.
     ///
     /// - RETURNS: `true` if there are no missing dependencies or no `prerequisiteComponets
@@ -82,13 +89,6 @@ class EmojiNodeSpawnerComponet : GKComponent {
             ])
         )
         return emojiNode
-    }
-    
-    override func didAddToEntity() {
-        checkPrerequisiteAndEnvironmentCompliance()
-        guard self.entity != nil else {
-            fatalError("Component fatal non-compliacne: entity not set")
-        }
     }
     
 }

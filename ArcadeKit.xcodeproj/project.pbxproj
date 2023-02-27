@@ -23,8 +23,10 @@
 		6693389229A6190E005AF692 /* StepperTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693389129A6190E005AF692 /* StepperTextFieldView.swift */; };
 		6693389729A626C9005AF692 /* SwiftUI+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693389629A626C9005AF692 /* SwiftUI+Ext.swift */; };
 		6693389929A63956005AF692 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693389829A63956005AF692 /* SidebarView.swift */; };
+		66B75E7129AC78F700F12976 /* BackgroundColorSchemeSceneComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B75E7029AC78F700F12976 /* BackgroundColorSchemeSceneComponent.swift */; };
 		66BC168B29AAD59800DE7FAE /* PhysicsBodySceneComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BC168A29AAD59800DE7FAE /* PhysicsBodySceneComponentModel.swift */; };
 		66BC168E29AB04F300DE7FAE /* PhysicBodyInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BC168D29AB04F300DE7FAE /* PhysicBodyInspectorView.swift */; };
+		66DA1D6129AB679C009C082B /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 66DA1D6029AB679C009C082B /* MyScene.sks */; };
 		66F506BE299F54BB00965422 /* 6B - PlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506A8299F54BB00965422 /* 6B - PlayScene.swift */; };
 		66F506BF299F54BB00965422 /* 6A - PlayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506A9299F54BB00965422 /* 6A - PlayState.swift */; };
 		66F506C0299F54BB00965422 /* 6C - PlayUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F506AA299F54BB00965422 /* 6C - PlayUI.swift */; };
@@ -61,8 +63,10 @@
 		6693389129A6190E005AF692 /* StepperTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperTextFieldView.swift; sourceTree = "<group>"; };
 		6693389629A626C9005AF692 /* SwiftUI+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Ext.swift"; sourceTree = "<group>"; };
 		6693389829A63956005AF692 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		66B75E7029AC78F700F12976 /* BackgroundColorSchemeSceneComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorSchemeSceneComponent.swift; sourceTree = "<group>"; };
 		66BC168A29AAD59800DE7FAE /* PhysicsBodySceneComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodySceneComponentModel.swift; sourceTree = "<group>"; };
 		66BC168D29AB04F300DE7FAE /* PhysicBodyInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicBodyInspectorView.swift; sourceTree = "<group>"; };
+		66DA1D6029AB679C009C082B /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
 		66F506A8299F54BB00965422 /* 6B - PlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "6B - PlayScene.swift"; sourceTree = "<group>"; };
 		66F506A9299F54BB00965422 /* 6A - PlayState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "6A - PlayState.swift"; sourceTree = "<group>"; };
 		66F506AA299F54BB00965422 /* 6C - PlayUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "6C - PlayUI.swift"; sourceTree = "<group>"; };
@@ -115,8 +119,8 @@
 				6693388329A615D1005AF692 /* Views */,
 				6693388429A615E2005AF692 /* Models */,
 				6693389529A61FB2005AF692 /* Components */,
-				6693389429A61FA9005AF692 /* Entities */,
 				6693388729A6166F005AF692 /* Scenes */,
+				6693389429A61FA9005AF692 /* Entities */,
 				6693388C29A617EA005AF692 /* Utilities */,
 				6693388529A615FE005AF692 /* Extensions */,
 				6693388A29A616DF005AF692 /* Testground */,
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				6693388F29A6185C005AF692 /* SceneSetting.swift */,
+				66B75E7029AC78F700F12976 /* BackgroundColorSchemeSceneComponent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			children = (
 				663EFC1329A75D1100BE5004 /* Exclusions */,
 				66F506A5299F54BB00965422 /* OK QuickStart */,
+				66DA1D6029AB679C009C082B /* MyScene.sks */,
 			);
 			path = Yuhao;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				663348E7299F4E360051C24B /* Preview Assets.xcassets in Resources */,
+				66DA1D6129AB679C009C082B /* MyScene.sks in Resources */,
 				663348E3299F4E360051C24B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +434,7 @@
 				66F506C4299F54BB00965422 /* 5A - TitleState.swift in Sources */,
 				66F506C1299F54BB00965422 /* 7 - PausedState.swift in Sources */,
 				6693388E29A61801005AF692 /* Constants.swift in Sources */,
+				66B75E7129AC78F700F12976 /* BackgroundColorSchemeSceneComponent.swift in Sources */,
 				66F506CC299F54BB00965422 /* 3 - MyGameViewController.swift in Sources */,
 				663EFC1529A77F9F00BE5004 /* EmojiNodeSpawnerComponet.swift in Sources */,
 				663EFC1729A77FDB00BE5004 /* Entity.swift in Sources */,
