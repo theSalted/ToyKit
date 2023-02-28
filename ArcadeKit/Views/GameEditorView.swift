@@ -29,14 +29,12 @@ struct GameEditorView: View {
                 GeometryReader { geometry in
                     SpriteView(scene: settings.scene)
                         .onAppear {
-                            settings.viewSizeX = geometry.size.width
-                            settings.viewSizeY = geometry.size.height
+                            settings.scene.sceneEntity[ViewSettingSceneComponentModel.self]?.setViewSize(size: geometry.size)
                             settings.initGameScene()
                         }
                         .onChange(of: geometry.size, perform: { newValue in
-                            settings.viewSizeX = geometry.size.width
-                            settings.viewSizeY = geometry.size.height
-                            settings.updateSceneSizeSetting()
+                            settings.scene.sceneEntity[ViewSettingSceneComponentModel.self]?.setViewSize(size: geometry.size)
+                            settings.scene.sceneEntity[ViewSettingSceneComponentModel.self]?.updateViewSizeSetting()
                         })
                         .onChange(of: colorScheme) { _ in
                             settings.scene.sceneEntity[BackgroundColorSchemeSceneComponent.self]?.updateSKColorScheme()

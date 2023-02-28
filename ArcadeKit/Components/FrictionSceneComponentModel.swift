@@ -10,9 +10,12 @@ import SpriteKit
 import SwiftUI
 
 @MainActor
-final class FrictionSceneComponentModel: GKComponent, ObservableObject {
+final class FrictionSceneComponentModel: GKComponent, ObservableObject, InspectorView {
     
     @Published var friction : Double = 0.2
+    
+    var isRemoveable = true
+    var isPriority = false
     
     /// A list of co-component types that this component depends on.
     ///

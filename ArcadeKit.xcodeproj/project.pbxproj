@@ -12,6 +12,11 @@
 		6602F07329AD7D39004DFFD2 /* ComponentListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F07229AD7D39004DFFD2 /* ComponentListItem.swift */; };
 		6602F07529AD9600004DFFD2 /* FrictionInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F07429AD95FF004DFFD2 /* FrictionInspectorView.swift */; };
 		6602F07729AD9653004DFFD2 /* FrictionSceneComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F07629AD9653004DFFD2 /* FrictionSceneComponentModel.swift */; };
+		6602F07929ADE4AD004DFFD2 /* AnchorPointSceneComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F07829ADE4AD004DFFD2 /* AnchorPointSceneComponentModel.swift */; };
+		6602F07B29ADE751004DFFD2 /* AnchorPointInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F07A29ADE751004DFFD2 /* AnchorPointInspectorView.swift */; };
+		6602F07D29ADEB81004DFFD2 /* ViewSettingSceneComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F07C29ADEB81004DFFD2 /* ViewSettingSceneComponentModel.swift */; };
+		6602F07F29ADEF90004DFFD2 /* ViewSettingInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F07E29ADEF90004DFFD2 /* ViewSettingInspectorView.swift */; };
+		6602F08229AE09B5004DFFD2 /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F08129AE09B5004DFFD2 /* InspectorView.swift */; };
 		663348DF299F4E350051C24B /* ArcadeKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663348DE299F4E350051C24B /* ArcadeKitApp.swift */; };
 		663348E1299F4E350051C24B /* GameEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663348E0299F4E350051C24B /* GameEditorView.swift */; };
 		663348E3299F4E360051C24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663348E2299F4E360051C24B /* Assets.xcassets */; };
@@ -58,6 +63,11 @@
 		6602F07229AD7D39004DFFD2 /* ComponentListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentListItem.swift; sourceTree = "<group>"; };
 		6602F07429AD95FF004DFFD2 /* FrictionInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrictionInspectorView.swift; sourceTree = "<group>"; };
 		6602F07629AD9653004DFFD2 /* FrictionSceneComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrictionSceneComponentModel.swift; sourceTree = "<group>"; };
+		6602F07829ADE4AD004DFFD2 /* AnchorPointSceneComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorPointSceneComponentModel.swift; sourceTree = "<group>"; };
+		6602F07A29ADE751004DFFD2 /* AnchorPointInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorPointInspectorView.swift; sourceTree = "<group>"; };
+		6602F07C29ADEB81004DFFD2 /* ViewSettingSceneComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSettingSceneComponentModel.swift; sourceTree = "<group>"; };
+		6602F07E29ADEF90004DFFD2 /* ViewSettingInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSettingInspectorView.swift; sourceTree = "<group>"; };
+		6602F08129AE09B5004DFFD2 /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
 		663348DB299F4E350051C24B /* ArcadeKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcadeKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		663348DE299F4E350051C24B /* ArcadeKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeKitApp.swift; sourceTree = "<group>"; };
 		663348E0299F4E350051C24B /* GameEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEditorView.swift; sourceTree = "<group>"; tabWidth = 5; usesTabs = 0; };
@@ -111,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6602F08029AE098D004DFFD2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6602F08129AE09B5004DFFD2 /* InspectorView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		663348D2299F4E350051C24B = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +247,7 @@
 		6693388C29A617EA005AF692 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				6602F08029AE098D004DFFD2 /* Protocols */,
 				6693388D29A61801005AF692 /* Constants.swift */,
 			);
 			path = Utilities;
@@ -247,11 +266,13 @@
 			children = (
 				66B75E7029AC78F700F12976 /* BackgroundColorSchemeSceneComponent.swift */,
 				66B75E7429AC7C5600F12976 /* GravitySceneComponentModel.swift */,
+				6602F07829ADE4AD004DFFD2 /* AnchorPointSceneComponentModel.swift */,
 				6602F07629AD9653004DFFD2 /* FrictionSceneComponentModel.swift */,
 				663EFC1429A77F9F00BE5004 /* EmojiNodeSpawnerComponet.swift */,
 				663EFC1829A77FF700BE5004 /* PrimaryPointerEventComponent.swift */,
 				663EFC1A29A7804000BE5004 /* SpriteComponent.swift */,
 				66BC168A29AAD59800DE7FAE /* PhysicsBodySceneComponentModel.swift */,
+				6602F07C29ADEB81004DFFD2 /* ViewSettingSceneComponentModel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -259,9 +280,11 @@
 		66BC168C29AB04D800DE7FAE /* Inspector Views */ = {
 			isa = PBXGroup;
 			children = (
+				6602F07E29ADEF90004DFFD2 /* ViewSettingInspectorView.swift */,
 				66BC168D29AB04F300DE7FAE /* PhysicBodyInspectorView.swift */,
 				66B75E7229AC7BCA00F12976 /* GravityInspectorView.swift */,
 				6602F07429AD95FF004DFFD2 /* FrictionInspectorView.swift */,
+				6602F07A29ADE751004DFFD2 /* AnchorPointInspectorView.swift */,
 			);
 			path = "Inspector Views";
 			sourceTree = "<group>";
@@ -436,6 +459,7 @@
 				6693388929A616B8005AF692 /* GameScene.swift in Sources */,
 				663348E1299F4E350051C24B /* GameEditorView.swift in Sources */,
 				66F506C7299F54BB00965422 /* ButtonStyles.swift in Sources */,
+				6602F07929ADE4AD004DFFD2 /* AnchorPointSceneComponentModel.swift in Sources */,
 				6602F07329AD7D39004DFFD2 /* ComponentListItem.swift in Sources */,
 				66F506CD299F54BB00965422 /* 2 - MyGameCoordinator.swift in Sources */,
 				66BC168E29AB04F300DE7FAE /* PhysicBodyInspectorView.swift in Sources */,
@@ -444,6 +468,7 @@
 				663348DF299F4E350051C24B /* ArcadeKitApp.swift in Sources */,
 				6602F06F29AD7CB0004DFFD2 /* ComponentListView.swift in Sources */,
 				6602F07729AD9653004DFFD2 /* FrictionSceneComponentModel.swift in Sources */,
+				6602F08229AE09B5004DFFD2 /* InspectorView.swift in Sources */,
 				6693389929A63956005AF692 /* SidebarView.swift in Sources */,
 				66F506C0299F54BB00965422 /* 6C - PlayUI.swift in Sources */,
 				663EFC1929A77FF700BE5004 /* PrimaryPointerEventComponent.swift in Sources */,
@@ -455,11 +480,14 @@
 				66F506BE299F54BB00965422 /* 6B - PlayScene.swift in Sources */,
 				663EFC1B29A7804000BE5004 /* SpriteComponent.swift in Sources */,
 				6693389029A6185C005AF692 /* SceneSetting.swift in Sources */,
+				6602F07F29ADEF90004DFFD2 /* ViewSettingInspectorView.swift in Sources */,
 				66B75E7329AC7BCA00F12976 /* GravityInspectorView.swift in Sources */,
 				663EFC1229A75CE100BE5004 /* ComponentTest.swift in Sources */,
+				6602F07D29ADEB81004DFFD2 /* ViewSettingSceneComponentModel.swift in Sources */,
 				66F506C4299F54BB00965422 /* 5A - TitleState.swift in Sources */,
 				66B75E7529AC7C5600F12976 /* GravitySceneComponentModel.swift in Sources */,
 				66F506C1299F54BB00965422 /* 7 - PausedState.swift in Sources */,
+				6602F07B29ADE751004DFFD2 /* AnchorPointInspectorView.swift in Sources */,
 				6693388E29A61801005AF692 /* Constants.swift in Sources */,
 				66B75E7129AC78F700F12976 /* BackgroundColorSchemeSceneComponent.swift in Sources */,
 				66F506CC299F54BB00965422 /* 3 - MyGameViewController.swift in Sources */,

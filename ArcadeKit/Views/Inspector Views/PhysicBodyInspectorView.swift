@@ -12,9 +12,7 @@ struct PhysicBodyInspectorView: View {
     
     var body: some View {
         Divider()
-        SideBarHeader(text: "Physics Body")
-            .font(.headline)
-            .foregroundColor(.gray)
+        SideBarHeader(text: "Physics Body", component: component, isRemovable: component.isRemoveable)
         Picker("Type", selection: $component.physicsBodyType) {
             ForEach(PhysicsBodyType.allCases, id: \.self) { type in
                 Text(type.rawValue)

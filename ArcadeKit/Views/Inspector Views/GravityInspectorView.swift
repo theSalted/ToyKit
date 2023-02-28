@@ -12,9 +12,7 @@ struct GravityInspectorView: View {
     
     var body: some View {
         Divider()
-        SideBarHeader(text: "Gravity")
-            .font(.headline)
-            .foregroundColor(.gray)
+        SideBarHeader(text: "Gravity", component: component, isRemovable: component.isRemoveable)
         HStack {
             StepperTextFieldView(name: "X", step: 0.1, value: $component.gravityX)
                 .onChange(of: component.gravityX) { newValue in

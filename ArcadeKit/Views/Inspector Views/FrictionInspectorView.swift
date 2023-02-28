@@ -12,9 +12,7 @@ struct FrictionInspectorView: View {
     
     var body: some View {
         Divider()
-        SideBarHeader(text: "Friction")
-            .font(.headline)
-            .foregroundColor(.gray)
+        SideBarHeader(text: "Friction", component: component, isRemovable: component.isRemoveable)
         StepperTextFieldView(name: "Friction", step: 0.1, value: $component.friction)
             .onChange(of: component.friction) { newValue in
                 // void changes if its invalidate

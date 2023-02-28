@@ -13,36 +13,33 @@ struct ComponentListView: View {
     @State var componentListSelection : GKComponent?
     
     var body: some View {
-        Group {
-            Divider()
-            HStack {
-                Text("Components")
-                    .font(.headline)
-                    .foregroundColor(.gray)
-                Spacer()
-                Menu {
-                    ForEach(settings.avaliableComponent, id: \.self) { component in
-                        Button {
-                            settings.addComponent(component: component)
-                        } label: {
-                            Text(String(describing: type(of: component)))
-                        }
-
+        Divider()
+        HStack {
+            Text("Components")
+                .font(.headline)
+                .foregroundColor(.gray)
+            Spacer()
+            Menu {
+                ForEach(settings.avaliableComponent, id: \.self) { component in
+                    Button {
+                        settings.addComponent(component: component)
+                    } label: {
+                        Text(String(describing: type(of: component)))
                     }
-                } label: {
-                    // TODO: Make a custom menu style
-                    Text("Add Component")
+
                 }
-                
+            } label: {
+                // TODO: Make a custom menu style
+                Text("Add Component")
             }
-            List(settings.scene.sceneEntity.components, id: \.self, selection: $componentListSelection) { component in
-                ComponentListItem(component: component)
-                    .environmentObject(settings)
-            }
-            .onDeleteCommand {
-                if let component = componentListSelection {
-                    settings.removeComponent(component: component)
-                }
+        }
+        List(settings.scene.sceneEntity.components, id: \.self, selection: $componentListSelection) { component in
+            ComponentListItem(component: component)
+                .environmentObject(settings)
+        }
+        .onDeleteCommand {
+            if let component = componentListSelection {
+                settings.removeComponent(component: component)
             }
         }
     }

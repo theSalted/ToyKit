@@ -11,8 +11,12 @@ import SwiftUI
 
 /// Add this component to control gravity setting at the scene
 @MainActor
-final class GravitySceneComponentModel: GKComponent, ObservableObject {
+final class GravitySceneComponentModel: GKComponent, ObservableObject, InspectorView {
     private var scene : SKScene
+    
+    var isRemoveable = true
+    var isPriority = false
+    
     @Published var gravityX : Double = 0.0
     @Published var gravityY : Double = -9.8
     

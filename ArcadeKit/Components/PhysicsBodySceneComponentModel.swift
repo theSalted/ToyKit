@@ -10,9 +10,12 @@ import SceneKit
 import SwiftUI
 
 /// Add Physics Body to game scene, and add a view component to inspector that allows modifications to the scenes.
-@MainActor final class PhysicsBodySceneComponentModel :  GKComponent, ObservableObject {
+@MainActor final class PhysicsBodySceneComponentModel :  GKComponent, ObservableObject, InspectorView {
     @Published var physicsBodyType : PhysicsBodyType = .staticPhysicsBody
     @Published var isDynamicPhysicsBodyRendered = false
+    
+    var isRemoveable = true
+    var isPriority = true
     
     private var scene : SKScene
     private var dynamicPhysicsBody = SKShapeNode()
