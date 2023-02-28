@@ -19,7 +19,7 @@ struct SidebarView: View {
         if isSidebarVisiable {
             VStack(alignment: .center) {
                 Group {
-                    SideBarHeaderView(text: "Scene")
+                    SideBarHeader(text: "Scene")
                     
                     HStack {
                         StepperTextFieldView(name: "X", step: 1.0, value: $settings.sceneSizeX)
@@ -56,7 +56,7 @@ struct SidebarView: View {
                 
                 Group {
                     Divider()
-                    SideBarHeaderView(text: "Anchor Point")
+                    SideBarHeader(text: "Anchor Point")
                     HStack {
                         StepperTextFieldView(name: "X", step: 0.1, value: $settings.anchorPointX)
                             .onChange(of: settings.anchorPointX) { newValue in
@@ -71,54 +71,17 @@ struct SidebarView: View {
                 
                 settings.scene.sceneEntity[PhysicsBodySceneComponentModel.self]?.inspectorView()
                 
-                Group {
-                    Divider()
-                    SideBarHeaderView(text: "Components")
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                    List {
-                        ForEach(settings.scene.sceneEntity.components, id: \.self) { component in
-                            ComponentListItem(entity: $settings.scene.sceneEntity,component: component)
-                        }
-                    }
-                }
+                settings.scene.sceneEntity[FrictionSceneComponentModel.self]?.inspectorView()
+                
+                settings.scene.sceneEntity[GravitySceneComponentModel.self]?.inspectorView()
+                
+                ComponentListView()
+                    .environmentObject(settings)
+                
                 Spacer()
             }
             .padding()
             .frame(width: width)
-        }
-    }
-}
-
-struct ComponentListItem: View {
-    @Binding var entity : GKEntity
-    var component : GKComponent
-    
-    var body: some View {
-        HStack {
-            Text(String(describing: type(of: component)))
-        }
-        .contextMenu{
-            Button {
-                entity.removeComponent(ofType: component.componentType)
-            } label: {
-                Label("Remove Component", image: "xmark")
-            }
-
-        }
-    }
-}
-
-
-struct SideBarHeaderView: View {
-    var text: String
-    
-    var body: some View {
-        HStack {
-            Text(text)
-                .font(.headline)
-                .foregroundColor(.gray)
-            Spacer()
         }
     }
 }

@@ -12,7 +12,7 @@ struct PhysicBodyInspectorView: View {
     
     var body: some View {
         Divider()
-        SideBarHeaderView(text: "Physics Body")
+        SideBarHeader(text: "Physics Body")
             .font(.headline)
             .foregroundColor(.gray)
         Picker("Type", selection: $component.physicsBodyType) {
@@ -30,4 +30,3 @@ struct PhysicBodyInspectorView: View {
             .disabled(component.physicsBodyType != .dynamicPhysicsBody)
     }
 }
-

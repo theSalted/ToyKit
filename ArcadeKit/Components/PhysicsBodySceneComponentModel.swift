@@ -17,6 +17,19 @@ import SwiftUI
     private var scene : SKScene
     private var dynamicPhysicsBody = SKShapeNode()
     
+    var physicsBody : SKPhysicsBody? {
+        get {
+            switch physicsBodyType {
+            case .none:
+                return nil
+            case .dynamicPhysicsBody:
+                return dynamicPhysicsBody.physicsBody
+            case .staticPhysicsBody:
+                return scene.physicsBody
+            }
+        }
+    }
+    
     init(scene: SKScene) {
         self.scene = scene
         super.init()
@@ -143,6 +156,9 @@ import SwiftUI
         case .none:
             destroyAllPhysicsBody()
         }
+        
+        // update firction setting if `FrictionSceneComponentModel` is installed
+        coComponent(ofType: FrictionSceneComponentModel.self)?.updateFriction()
     }
     
     /// Update game physics body and settings with type.

@@ -32,19 +32,45 @@ import GameplayKit
     
     @Published var isPaused = false
     
+    lazy var avaliableComponent : [GKComponent] = {
+        let backgroundColorSchemeSceneComponent = BackgroundColorSchemeSceneComponent(scene: scene)
+        let physicsBodySceneComponentModel = PhysicsBodySceneComponentModel(scene: scene)
+        let frictionSceneComponentModel = FrictionSceneComponentModel()
+        let gravitySceneComponentModel = GravitySceneComponentModel(scene: scene)
+        let emojiNodeSpawnerComponet = EmojiNodeSpawnerComponet()
+        
+        return [backgroundColorSchemeSceneComponent, physicsBodySceneComponentModel, frictionSceneComponentModel, gravitySceneComponentModel, emojiNodeSpawnerComponet]
+    }()
+    
     ///  Init game scene; expected to be called when SpriteView onAppear.
     func initGameScene() {
         updateSceneSizeSetting()
         updateAnchorPoint()
         addComponent(component: BackgroundColorSchemeSceneComponent(scene: scene))
         addComponent(component: PhysicsBodySceneComponentModel(scene: scene))
+        addComponent(component: FrictionSceneComponentModel())
+        addComponent(component: GravitySceneComponentModel(scene: scene))
         addComponent(component: EmojiNodeSpawnerComponet())
     }
     
-    /// Add component to `SceneSetting` and `GameScene`'s componets list
+    /// Ad component to `SceneSetting` and `GameScene`'s componets list
     func addComponent(component: GKComponent) {
-        //components.append(component)
-        scene.sceneEntity.addComponent(component)
+        withAnimation {
+            scene.sceneEntity.addComponent(component)
+            self.objectWillChange.send()
+        }
+    }
+    
+    /// Remove component from `SceneSetting` and `GameScene`'s componets list
+    func removeComponent(component: GKComponent) {
+        withAnimation {
+            scene.sceneEntity.removeComponent(ofType: component.componentType)
+            self.objectWillChange.send()
+        }
+    }
+    
+    func logComponent() {
+        print(scene.sceneEntity.components)
     }
     
     // TODO: find a better solution for pause state update
