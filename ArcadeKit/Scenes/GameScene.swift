@@ -22,46 +22,53 @@ final class GameScene : SKScene {
     }
     
     override func didChangeSize(_ oldSize: CGSize) {
-        sceneEntity[PhysicsBodySceneComponentModel.self]?.sceneChangeSize()
+        sceneEntity.component(ofType: PhysicsBodySceneComponentModel.self)?.sceneChangeSize()
+        //sceneEntity[PhysicsBodySceneComponentModel.self]?.sceneChangeSize()
     }
     
     #if canImport(UIKit)
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
-        let location = touch.location(in: self)
-        primaryInputDown(location: location)
+        sceneEntity.component(ofType: TouchEventComponent.self)?.updateEvent(touches: touches, event: event, type: .touchesBegan)
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        sceneEntity.component(ofType: TouchEventComponent.self)?.updateEvent(touches: touches, event: event, type: .touchesEnded)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        sceneEntity.component(ofType: TouchEventComponent.self)?.updateEvent(touches: touches, event: event, type: .touchesMoved)
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        sceneEntity.component(ofType: TouchEventComponent.self)?.updateEvent(touches: touches, event: event, type: .touchesCancelled)
+    }
+    
     #elseif canImport(AppKit)
+    
+    override func mouseUp(with event: NSEvent) {
+        sceneEntity.component(ofType: MouseEventComponent.self)?.updateEvent(event: event, type: .mouseUp)
+    }
+    
     override func mouseDown(with event: NSEvent) {
-        let location = event.location(in: self)
-        primaryInputDown(location: location)
+        sceneEntity.component(ofType: MouseEventComponent.self)?.updateEvent(event: event, type: .mouseDown)
     }
+    
+    override func mouseMoved(with event: NSEvent) {
+        sceneEntity.component(ofType: MouseEventComponent.self)?.updateEvent(event: event, type: .mouseMoved)
+    }
+    
+    override func mouseEntered(with event: NSEvent) {
+        sceneEntity.component(ofType: MouseEventComponent.self)?.updateEvent(event: event, type: .mouseEntered)
+    }
+    
+    override func mouseExited(with event: NSEvent) {
+        sceneEntity.component(ofType: MouseEventComponent.self)?.updateEvent(event: event, type: .mouseExited)
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        sceneEntity.component(ofType: MouseEventComponent.self)?.updateEvent(event: event, type: .mouseDragged)
+    }
+    
     #endif
-    
-    /// Add an entity and its node to end of the reciver's enities list
-    func addEntity(_ entity: GKEntity) {
-        entities.insert(entity)
-        if let spriteNode = entity.component(ofType: SpriteComponent.self)?.node {
-            scene?.addChild(spriteNode)
-        }
-    }
-    
-    /// Add an entity and its node from its parent
-    func removeEntity(_ entity: GKEntity) {
-        if let spriteNode = entity.component(ofType: SpriteComponent.self)?.node {
-            spriteNode.removeFromParent()
-        }
-        
-        entities.remove(entity)
-    }
-    
-    // TODO: Adopt touch input to an ECS system
-    /// Tells this object that primary input has occured depending on platform. Left click on macOS, first touch on iOS and iPadOS
-    func primaryInputDown(location: CGPoint)
-    {
-        if let emojiNode = self.sceneEntity[EmojiNodeSpawnerComponet.self]?.createRandomEmojiNode(position: location) {
-            addChild(emojiNode)
-        }
-    }
 }
 

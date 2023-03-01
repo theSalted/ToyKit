@@ -46,5 +46,5 @@ struct SidebarView: View {
      if let viewComponent = component as? InspectorView, !viewComponent.isPriority {
          viewComponent.inspectorView()
      }
- }
+ }h
  */

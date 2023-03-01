@@ -9,59 +9,31 @@ import GameplayKit
 import SpriteKit
 
 /// Spwan Emoji nodes on scene
-class EmojiNodeSpawnerComponet : GKComponent {
+class EmojiNodeSpawnerComponet : GKComponent, PackageComponent {
     
-    /// A list of co-component types that this component depends on.
-    ///
-    /// - NOTE: The component should not raise an application-halting error or exception if a dependency is missing, because components may be added to or removed from an entity during runtime to dynamically modify the entity's behavior. In the absence of a dependency, a component should fail gracefully and simply skip a part or all of its functionality, optionally logging a warning.
-    ///  Credit: ShinryakuTako@invadingoctopus.io
-    var prerequisiteComponets: [GKComponent.Type]? {
-        // TODO: add cotntorl component once control system became ECS complied
-        //[PrimaryPointerEventComponent.self]
-        nil
+    var node : SKNode
+    
+    var dependentComponents: [GKComponent.Type]
+    
+    init(node: SKNode) {
+        self.node = node
+        
+        dependentComponents = [PointerEventComponent.self]
+        
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func didAddToEntity() {
-        checkPrerequisiteAndEnvironmentCompliance()
-        guard self.entity != nil else {
-            fatalError("Component fatal non-compliacne: entity not set")
-        }
-    }
-    
-    /// Check if the compponet is attached to an entity and any of the components is missing in `prerequisiteComponets`.
-    ///
-    /// - RETURNS: `true` if there are no missing dependencies or no `prerequisiteComponets
-    ///
-    ///  - This function should become either an extension of GKComponent, a helper function of a manager class / custom open class
-    ///
-    ///  Credit - ShinryakuTako@invadingoctopus.io
-    @discardableResult
-    func checkPrerequisiteAndEnvironmentCompliance() -> Bool {
-        var isMissingDependencies: Bool = false
         
-        // Return false if there is no `prerequisiteComponets`
-        if self.prerequisiteComponets == nil {
-            return false
-        }
-        
-        guard let entity = self.entity else {
-            // return true if component is not attached to an entity
-            // TODO: A proper warning and debug system
-            print("Warning: Component is not attached to an entity")
-            return true
-        }
-        
-        self.prerequisiteComponets?.forEach { requiredComponentType in
-            let matchedComponent = self.coComponent(ofType: requiredComponentType)
-            
-            if matchedComponent?.componentType != requiredComponentType {
-                print("Warning: \(entity)  is missing a \(requiredComponentType) (or a RelayComponent linked to it) which is required by \(self)")
-                
-                isMissingDependencies = true
-            }
-        }
-        
-        return !isMissingDependencies
+        // Create random emoji node when pointer event is triggered
+        // - TODO: maybe add entity rather than nodes?
+        coComponent(ofType: PointerEventComponent.self)?.subscribe(type: .began, actions: { [self] locations in
+            node.addChild(createRandomEmojiNode(position: locations))
+        })
     }
     
     /// Create an randon emoji  as SKLabelNode and offset it

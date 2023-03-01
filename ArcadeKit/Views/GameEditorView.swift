@@ -55,6 +55,17 @@ struct GameEditorView: View {
                     #endif
                 }
             }
+            #if os(iOS)
+            .overlay {
+                HStack {
+                    Spacer()
+                    SidebarView(isSidebarVisiable: $isSidebarOpened, width: 200)
+                        .environmentObject(settings)
+                }
+                
+            }
+            #endif
+            
             #if os(macOS)
             SidebarView(isSidebarVisiable: $isSidebarOpened, width: 250)
                 .environmentObject(settings)

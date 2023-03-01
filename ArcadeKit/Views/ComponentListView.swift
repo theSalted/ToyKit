@@ -20,7 +20,7 @@ struct ComponentListView: View {
                 .foregroundColor(.gray)
             Spacer()
             Menu {
-                ForEach(settings.avaliableComponent, id: \.self) { component in
+                ForEach(settings.avaliableComponents, id: \.self) { component in
                     Button {
                         settings.addComponent(component: component)
                     } label: {
@@ -37,10 +37,12 @@ struct ComponentListView: View {
             ComponentListItem(component: component)
                 .environmentObject(settings)
         }
+        #if canImport(AppKit)
         .onDeleteCommand {
             if let component = componentListSelection {
                 settings.removeComponent(component: component)
             }
         }
+        #endif
     }
 }
