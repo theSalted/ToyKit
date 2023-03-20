@@ -17,11 +17,12 @@ struct StepperTextFieldView: View {
             TextField("", value: $value, format: .number)
                 .textFieldStyle(.plain)
                 .padding(.leading, 2)
+                .padding(.vertical, 2)
             if isHovered {
                 Stepper("", value: $value, step: step)
             } else {
                 Text(name)
-                    .padding(.vertical, 2)
+                    .font(.caption)
                     .padding(.trailing, 3)
             }
             

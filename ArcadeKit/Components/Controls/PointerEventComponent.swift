@@ -59,7 +59,6 @@ class PointerEventComponent : GKComponent, PackageComponent {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private func attachToDependent() {
         #if canImport(AppKit)
         coComponent(ofType: MouseEventComponent.self)?.subscribe(type: .mouseDown, actions: { [self] event in
@@ -115,13 +114,16 @@ class PointerEventComponent : GKComponent, PackageComponent {
         })
         
         #endif
-        
     }
+    
     
     override func didAddToEntity() {
         attachToDependent()
     }
     
+    override func willRemoveFromEntity() {
+        clearCallbacks()
+    }
     
     /// Will Iinform subscirbed closures that the user has triggered a new pointer event of designated type
     func subscribe(type: PointerEventType, actions: @escaping (CGPoint) -> Void) {
@@ -133,5 +135,11 @@ class PointerEventComponent : GKComponent, PackageComponent {
         case .moved:
             pointerMovedCallbacks.append(actions)
         }
+    }
+    
+    func clearCallbacks() {
+        pointerBeganCallbacks = [(CGPoint) -> Void]()
+        pointerMovedCallbacks = [(CGPoint) -> Void]()
+        pointerEndedCallbacks = [(CGPoint) -> Void]()
     }
 }

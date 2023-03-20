@@ -11,7 +11,6 @@ struct ViewSettingInspectorView: View {
     @StateObject var component : ViewSettingSceneComponentModel
     
     var body: some View {
-        SideBarHeader(text: "Scene", component: component, isRemovable: component.isRemoveable)
         
         HStack {
             StepperTextFieldView(name: "X", step: 1.0, value: $component.sceneSizeX)

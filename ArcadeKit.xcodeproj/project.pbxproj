@@ -17,6 +17,7 @@
 		6602F07D29ADEB81004DFFD2 /* ViewSettingSceneComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F07C29ADEB81004DFFD2 /* ViewSettingSceneComponentModel.swift */; };
 		6602F07F29ADEF90004DFFD2 /* ViewSettingInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F07E29ADEF90004DFFD2 /* ViewSettingInspectorView.swift */; };
 		6602F08229AE09B5004DFFD2 /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602F08129AE09B5004DFFD2 /* InspectorView.swift */; };
+		6611E81829BEAD6E00D6E48F /* TouchPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6611E81729BEAD6E00D6E48F /* TouchPadView.swift */; };
 		663348DF299F4E350051C24B /* ArcadeKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663348DE299F4E350051C24B /* ArcadeKitApp.swift */; };
 		663348E1299F4E350051C24B /* GameEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663348E0299F4E350051C24B /* GameEditorView.swift */; };
 		663348E3299F4E360051C24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663348E2299F4E360051C24B /* Assets.xcassets */; };
@@ -26,7 +27,7 @@
 		663EFC1529A77F9F00BE5004 /* EmojiNodeSpawnerComponet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663EFC1429A77F9F00BE5004 /* EmojiNodeSpawnerComponet.swift */; };
 		663EFC1729A77FDB00BE5004 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663EFC1629A77FDB00BE5004 /* Entity.swift */; };
 		663EFC1929A77FF700BE5004 /* PointerEventComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663EFC1829A77FF700BE5004 /* PointerEventComponent.swift */; };
-		663EFC1B29A7804000BE5004 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663EFC1A29A7804000BE5004 /* SpriteComponent.swift */; };
+		663EFC1B29A7804000BE5004 /* RenderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663EFC1A29A7804000BE5004 /* RenderComponent.swift */; };
 		6693388929A616B8005AF692 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693388829A616B8005AF692 /* GameScene.swift */; };
 		6693388E29A61801005AF692 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693388D29A61801005AF692 /* Constants.swift */; };
 		6693389029A6185C005AF692 /* SceneSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693388F29A6185C005AF692 /* SceneSetting.swift */; };
@@ -35,6 +36,10 @@
 		6693389929A63956005AF692 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693389829A63956005AF692 /* SidebarView.swift */; };
 		66A55A7E29AF27BD00BC73D8 /* MouseEventComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A55A7D29AF27BD00BC73D8 /* MouseEventComponent.swift */; };
 		66A55A8029AF27E300BC73D8 /* TouchEventComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A55A7F29AF27E300BC73D8 /* TouchEventComponent.swift */; };
+		66AF8F0A29C7F3B2003F1EC1 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF8F0929C7F3B2003F1EC1 /* Console.swift */; };
+		66AF8F0D29C8566C003F1EC1 /* TouchPadCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF8F0C29C8566C003F1EC1 /* TouchPadCore.swift */; };
+		66AF8F0F29C8569A003F1EC1 /* IndicatorsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF8F0E29C8569A003F1EC1 /* IndicatorsGrid.swift */; };
+		66AF8F1129C856BF003F1EC1 /* TouchPadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF8F1029C856BF003F1EC1 /* TouchPadIndicator.swift */; };
 		66B75E7129AC78F700F12976 /* BackgroundColorSchemeSceneComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B75E7029AC78F700F12976 /* BackgroundColorSchemeSceneComponent.swift */; };
 		66B75E7329AC7BCA00F12976 /* GravityInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B75E7229AC7BCA00F12976 /* GravityInspectorView.swift */; };
 		66B75E7529AC7C5600F12976 /* GravitySceneComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B75E7429AC7C5600F12976 /* GravitySceneComponentModel.swift */; };
@@ -55,6 +60,7 @@
 		6602F07C29ADEB81004DFFD2 /* ViewSettingSceneComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSettingSceneComponentModel.swift; sourceTree = "<group>"; };
 		6602F07E29ADEF90004DFFD2 /* ViewSettingInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSettingInspectorView.swift; sourceTree = "<group>"; };
 		6602F08129AE09B5004DFFD2 /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
+		6611E81729BEAD6E00D6E48F /* TouchPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadView.swift; sourceTree = "<group>"; };
 		663348DB299F4E350051C24B /* ArcadeKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcadeKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		663348DE299F4E350051C24B /* ArcadeKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeKitApp.swift; sourceTree = "<group>"; };
 		663348E0299F4E350051C24B /* GameEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEditorView.swift; sourceTree = "<group>"; tabWidth = 5; usesTabs = 0; };
@@ -65,7 +71,7 @@
 		663EFC1429A77F9F00BE5004 /* EmojiNodeSpawnerComponet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiNodeSpawnerComponet.swift; sourceTree = "<group>"; };
 		663EFC1629A77FDB00BE5004 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		663EFC1829A77FF700BE5004 /* PointerEventComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerEventComponent.swift; sourceTree = "<group>"; };
-		663EFC1A29A7804000BE5004 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
+		663EFC1A29A7804000BE5004 /* RenderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderComponent.swift; sourceTree = "<group>"; };
 		6693388829A616B8005AF692 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		6693388D29A61801005AF692 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6693388F29A6185C005AF692 /* SceneSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSetting.swift; sourceTree = "<group>"; };
@@ -74,6 +80,10 @@
 		6693389829A63956005AF692 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		66A55A7D29AF27BD00BC73D8 /* MouseEventComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseEventComponent.swift; sourceTree = "<group>"; };
 		66A55A7F29AF27E300BC73D8 /* TouchEventComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEventComponent.swift; sourceTree = "<group>"; };
+		66AF8F0929C7F3B2003F1EC1 /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
+		66AF8F0C29C8566C003F1EC1 /* TouchPadCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadCore.swift; sourceTree = "<group>"; };
+		66AF8F0E29C8569A003F1EC1 /* IndicatorsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsGrid.swift; sourceTree = "<group>"; };
+		66AF8F1029C856BF003F1EC1 /* TouchPadIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadIndicator.swift; sourceTree = "<group>"; };
 		66B75E7029AC78F700F12976 /* BackgroundColorSchemeSceneComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorSchemeSceneComponent.swift; sourceTree = "<group>"; };
 		66B75E7229AC7BCA00F12976 /* GravityInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityInspectorView.swift; sourceTree = "<group>"; };
 		66B75E7429AC7C5600F12976 /* GravitySceneComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravitySceneComponentModel.swift; sourceTree = "<group>"; };
@@ -186,6 +196,7 @@
 		6693388629A61619005AF692 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				66AF8F0B29C82534003F1EC1 /* TouchPadView */,
 				6602F07229AD7D39004DFFD2 /* ComponentListItem.swift */,
 				6602F07029AD7CFD004DFFD2 /* SideBarHeader.swift */,
 				6693389129A6190E005AF692 /* StepperTextFieldView.swift */,
@@ -223,6 +234,7 @@
 			children = (
 				6602F08029AE098D004DFFD2 /* Protocols */,
 				6693388D29A61801005AF692 /* Constants.swift */,
+				66AF8F0929C7F3B2003F1EC1 /* Console.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -239,7 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				66A55A7C29AF279A00BC73D8 /* Controls */,
-				663EFC1A29A7804000BE5004 /* SpriteComponent.swift */,
+				663EFC1A29A7804000BE5004 /* RenderComponent.swift */,
 				663EFC1429A77F9F00BE5004 /* EmojiNodeSpawnerComponet.swift */,
 				66C4850329AEFE7100C474F5 /* Scenes */,
 			);
@@ -256,14 +268,25 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
+		66AF8F0B29C82534003F1EC1 /* TouchPadView */ = {
+			isa = PBXGroup;
+			children = (
+				6611E81729BEAD6E00D6E48F /* TouchPadView.swift */,
+				66AF8F0C29C8566C003F1EC1 /* TouchPadCore.swift */,
+				66AF8F0E29C8569A003F1EC1 /* IndicatorsGrid.swift */,
+				66AF8F1029C856BF003F1EC1 /* TouchPadIndicator.swift */,
+			);
+			path = TouchPadView;
+			sourceTree = "<group>";
+		};
 		66BC168C29AB04D800DE7FAE /* Inspector Views */ = {
 			isa = PBXGroup;
 			children = (
+				6602F07E29ADEF90004DFFD2 /* ViewSettingInspectorView.swift */,
 				6602F07A29ADE751004DFFD2 /* AnchorPointInspectorView.swift */,
 				6602F07429AD95FF004DFFD2 /* FrictionInspectorView.swift */,
 				66B75E7229AC7BCA00F12976 /* GravityInspectorView.swift */,
 				66BC168D29AB04F300DE7FAE /* PhysicBodyInspectorView.swift */,
-				6602F07E29ADEF90004DFFD2 /* ViewSettingInspectorView.swift */,
 			);
 			path = "Inspector Views";
 			sourceTree = "<group>";
@@ -358,9 +381,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66AF8F0D29C8566C003F1EC1 /* TouchPadCore.swift in Sources */,
+				6611E81829BEAD6E00D6E48F /* TouchPadView.swift in Sources */,
+				66AF8F0A29C7F3B2003F1EC1 /* Console.swift in Sources */,
+				66AF8F0F29C8569A003F1EC1 /* IndicatorsGrid.swift in Sources */,
 				6693389229A6190E005AF692 /* StepperTextFieldView.swift in Sources */,
 				6693389729A626C9005AF692 /* SwiftUI+Ext.swift in Sources */,
 				6693388929A616B8005AF692 /* GameScene.swift in Sources */,
+				66AF8F1129C856BF003F1EC1 /* TouchPadIndicator.swift in Sources */,
 				663348E1299F4E350051C24B /* GameEditorView.swift in Sources */,
 				6602F07929ADE4AD004DFFD2 /* AnchorPointSceneComponentModel.swift in Sources */,
 				6602F07329AD7D39004DFFD2 /* ComponentListItem.swift in Sources */,
@@ -376,7 +404,7 @@
 				6693389929A63956005AF692 /* SidebarView.swift in Sources */,
 				663EFC1929A77FF700BE5004 /* PointerEventComponent.swift in Sources */,
 				66BC168B29AAD59800DE7FAE /* PhysicsBodySceneComponentModel.swift in Sources */,
-				663EFC1B29A7804000BE5004 /* SpriteComponent.swift in Sources */,
+				663EFC1B29A7804000BE5004 /* RenderComponent.swift in Sources */,
 				6693389029A6185C005AF692 /* SceneSetting.swift in Sources */,
 				6602F07F29ADEF90004DFFD2 /* ViewSettingInspectorView.swift in Sources */,
 				66B75E7329AC7BCA00F12976 /* GravityInspectorView.swift in Sources */,

@@ -11,10 +11,12 @@ import SpriteKit
 /// Spwan Emoji nodes on scene
 class EmojiNodeSpawnerComponet : GKComponent, PackageComponent {
     
+    // MARK: Properties
     var node : SKNode
     
     var dependentComponents: [GKComponent.Type]
     
+    // MARK: Init
     init(node: SKNode) {
         self.node = node
         
@@ -23,16 +25,20 @@ class EmojiNodeSpawnerComponet : GKComponent, PackageComponent {
         super.init()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: Overrides
     
     override func didAddToEntity() {
         
         // Create random emoji node when pointer event is triggered
         // - TODO: maybe add entity rather than nodes?
         coComponent(ofType: PointerEventComponent.self)?.subscribe(type: .began, actions: { [self] locations in
-            node.addChild(createRandomEmojiNode(position: locations))
+            let emojiNode = createRandomEmojiNode(position: locations)
+            node.addChild(emojiNode)
         })
     }
     
@@ -41,6 +47,8 @@ class EmojiNodeSpawnerComponet : GKComponent, PackageComponent {
         let emojis = "👾🕹🚀🎮📱⌚️💿📀🧲🧿🎲🍏🥎🍄🧠👁💩😈👿👻💀👽🤖🎃👊🏻💧☁️🚗💣🧸🧩🎨🎸⚽️🎱🍖🍑🍆🍩🍌⭐️🌈🌸🌺🌼🐹🦊🐼🐱🐶❤️🧡💛💚💙💜💔🔶🔷♦️"
         let randomEmoji = String(emojis.randomElement()!)
         let emojiNode = SKLabelNode(text: randomEmoji)
+        
+        
         emojiNode.fontSize = 64
         emojiNode.position = position
         emojiNode.zPosition = -10

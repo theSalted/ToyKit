@@ -43,13 +43,14 @@ final class TouchEventComponent : GKComponent {
         }
     }
     
-    override func didAddToEntity() {
-        subscribe(type: .touchesBegan) { touches, event in
-            print("touched")
-            guard let touch = touches.first else { return }
-            print(touch)
-        }
+    /// Reset all callbacks functions
+    func clearCallbacks() {
+        touchesBeganCallbacks = [(Set<UITouch>, UIEvent?) -> Void]()
+        touchesEndedCallbacks = [(Set<UITouch>, UIEvent?) -> Void]()
+        touchesMovedCallbacks = [(Set<UITouch>, UIEvent?) -> Void]()
+        touchesCancelledCallbacks = [(Set<UITouch>, UIEvent?) -> Void]()
     }
+    
     
     /// Will Iinform subscirbed closures that the user has triggered a new mouse event of designated type
     func subscribe(type: TouchEventType, actions: @escaping (Set<UITouch>, UIEvent?) -> Void) {
@@ -63,6 +64,10 @@ final class TouchEventComponent : GKComponent {
         case .touchesCancelled:
             touchesCancelledCallbacks.append(actions)
         }
+    }
+    
+    override func willRemoveFromEntity() {
+        clearCallbacks()
     }
 }
 #endif

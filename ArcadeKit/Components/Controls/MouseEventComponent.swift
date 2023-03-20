@@ -54,9 +54,19 @@ final class MouseEventComponent : GKComponent {
         }
     }
     
+    /// Clear callbacks
+    func clearCallbacks() {
+        mouseUpCallbacks = [(NSEvent) -> Void]()
+        mouseDownCallbacks = [(NSEvent) -> Void]()
+        mouseMovedCallbacks = [(NSEvent) -> Void]()
+        mouseEnteredCallbacks = [(NSEvent) -> Void]()
+        mouseExitedCallbacks = [(NSEvent) -> Void]()
+        mouseDraggedCallbacks = [(NSEvent) -> Void]()
+    }
+    
+    
     /// Will Iinform subscirbed closures that the user has triggered a new mouse event of designated type
     func subscribe(type: MouseEventType, actions: @escaping (NSEvent) -> Void) {
-        // TODO: Investigate the need for unsubscribing
         switch type {
         case .mouseUp:
             mouseUpCallbacks.append(actions)
@@ -71,6 +81,10 @@ final class MouseEventComponent : GKComponent {
         case .mouseDragged:
             mouseDraggedCallbacks.append(actions)
         }
+    }
+    
+    override func willRemoveFromEntity() {
+        clearCallbacks()
     }
 }
 

@@ -8,16 +8,20 @@
 import SpriteKit
 import SwiftUI
 import GameplayKit
+import os
 
 /// An object that organize all of the active game contents.
 final class GameScene : SKScene {
-    /// Child `GKEntity` relevant to gameplay
-    /// - Use `addEntity()` and `removeEntity()` to add and remove individual entity
-    var entities = Set<GKEntity>()
+    
+    
+    // MARK: Properties
+    
+    let logger = Logger(subsystem: "me.chenyuha.arcadekit", category: "Game Scene")
     
     /// An entity relevant to gameplay associate with game scene object
     var sceneEntity = GKEntity()
     
+    // MARK: Overrides
     override func update(_ currentTime: TimeInterval) {
     }
     
@@ -26,6 +30,7 @@ final class GameScene : SKScene {
         //sceneEntity[PhysicsBodySceneComponentModel.self]?.sceneChangeSize()
     }
     
+    // MARK: Input Relays
     #if canImport(UIKit)
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         sceneEntity.component(ofType: TouchEventComponent.self)?.updateEvent(touches: touches, event: event, type: .touchesBegan)
@@ -68,7 +73,6 @@ final class GameScene : SKScene {
     override func mouseDragged(with event: NSEvent) {
         sceneEntity.component(ofType: MouseEventComponent.self)?.updateEvent(event: event, type: .mouseDragged)
     }
-    
     #endif
 }
 

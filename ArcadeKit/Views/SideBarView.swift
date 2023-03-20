@@ -18,6 +18,7 @@ struct SidebarView: View {
     var body: some View {
         if isSidebarVisiable {
             VStack(alignment: .center) {
+                
                 settings.scene.sceneEntity[ViewSettingSceneComponentModel.self]?.inspectorView()
                 
                 settings.scene.sceneEntity[AnchorPointSceneComponentModel.self]?.inspectorView()
